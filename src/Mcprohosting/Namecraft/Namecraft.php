@@ -67,7 +67,10 @@ class Namecraft
         $words = array();
 
         foreach ($this->getLists() as $list) {
-            $words[] = strtolower($list[array_rand($list)]);
+            
+            $word = $list[array_rand($list)];
+
+            $words[] = trim(strtolower($word));
         }
 
         $process = 'process' . ($format ?: $this->modes[array_rand($this->modes)]);
